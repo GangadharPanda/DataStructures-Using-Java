@@ -45,7 +45,7 @@ public class PositiveCumulativeSum {
 		int[] arr = { 1, -2, 3, 4, -6 };
 		List<Integer> result = getPositiveCumulativeSum(arr);
 		for (Integer i : result) {
-			System.out.println(i + " ");
+			System.out.print(i + " ");
 		}
 	}
 }
