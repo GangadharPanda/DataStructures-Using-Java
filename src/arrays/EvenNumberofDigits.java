@@ -28,10 +28,36 @@ public class EvenNumberofDigits {
 		}
 		return list;
 	}
+	
+	private static List<Integer> getEvenDigitNumbersUsingCountDigit(int[] arr) {
+		List<Integer> list = new ArrayList<>();
+		for (int i = 0; i < arr.length; i++) {
+			if (digitCount(arr[i]) % 2 == 0) {
+				list.add(arr[i]);
+			}
+		}
+		return list;
+	}
+
+	private static int digitCount(int number) {
+		int count = 0;
+		while (number != 0) {
+			count++;
+			number /= 10;
+		}
+		return count;
+	}
 
 	public static void main(String[] args) {
 		int[] arr = { 42, 564, 5775, 34, 123, 454, 1, 5, 45, 3556, 23442 };
 		List<Integer> list = getEvenDigitNumbers(arr);
+
+		for (Integer i : list) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		
+		list = getEvenDigitNumbersUsingCountDigit(arr);
 
 		for (Integer i : list) {
 			System.out.print(i + " ");
